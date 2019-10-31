@@ -7,7 +7,7 @@ namespace MyAttribute
     {
         
         public object[] Arguments { get; private set; }
-            public ExecuteMe(params object[] arguments {
+            public ExecuteMe(params object[] arguments) {
             Arguments = arguments;
         }
     }
