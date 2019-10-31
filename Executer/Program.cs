@@ -2,11 +2,8 @@
 
 namespace Executer
 {
-    class Program
+    class Executer
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        
     }
 }

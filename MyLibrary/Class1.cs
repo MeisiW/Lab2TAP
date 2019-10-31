@@ -2,8 +2,8 @@
 
 namespace MyLibrary
 {
-    public class Class1
+    public class MyLibrary
     {
-        dfghj
+        
     }
 }
