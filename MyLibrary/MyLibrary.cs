@@ -3,7 +3,7 @@ using MyAttribute;
 
 namespace MyLibrary
 {
-    public class Foo
+   public class Foo
     {
         [ExecuteMe]
         public void M1()

@@ -10,22 +10,23 @@ namespace Executer
         public static void Main(string[] args)
         {
             var a = Assembly.LoadFrom("MyLibrary.dll");
-            foreach (var type in a.GetTypes())
-                if (type.IsClass)
+            foreach (var type in a.GetTypes()) //type è uguale ai nomi delle classi in MyLibrary
+             
+                if (type.IsClass)  //se type è uguale al nome di una classe o di un delegate
                 {
-                    var instance = Activator.CreateInstance(type);
-                    foreach(var m in type.GetMethods()) 
+                    var instance = Activator.CreateInstance(type);  //instance è una instance di type(cioè è una instance della classe Foo)
+                    foreach (var m in type.GetMethods())  //m è uguale ai nomi dei metodi in type (cioè in Foo) esempio: void M2(int 32)
                     {
-                       foreach(var att in m.GetCustomAttributes<ExecuteMe>())
+                        foreach (var att in m.GetCustomAttributes<ExecuteMe>())  //att è uguale agli attributi trovati in MyLibrary
                         {
-                            m.Invoke(instance, att.Arguments);
+                            m.Invoke(instance, att.Arguments); //invoke prende instance (cioè una instance della classe Foo) e gli argomenti degli attributi trovati in MyLibrary e invoca i metodi trovati in Foo
                         }
                     }
 
 
-                    Console.WriteLine(type.FullName);
+                    Console.WriteLine(type.FullName); //stampa MyLibrary.Foo
                     Console.ReadLine();
                 }
+            }
         }
-    }
 }
