@@ -67,7 +67,7 @@ namespace MyLibrary
         [ExecuteMe(45.5)]
         [ExecuteMe(0)]
         [ExecuteMe(3)]
-        public void M2Second(double a)
+        public void M2Second(int a) 
         {
             Console.WriteLine("M2Second a={0}", a);
         }
