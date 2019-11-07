@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using MyAttribute;
-using MyLibrary;
 
 namespace Executer
 {
@@ -9,7 +8,8 @@ namespace Executer
     {
         public static void Main(string[] args)
         {
-            var a = Assembly.LoadFrom("MyLibrary.dll");
+            const string mylibraryBinDebugMylibraryDll = @"C:\Users\unieuro\OneDrive\Desktop\Lab2TAP\MyLibrary\bin\Debug\netstandard2.0\MyLibrary.dll";
+            var a = Assembly.LoadFrom(mylibraryBinDebugMylibraryDll);
             foreach (var type in a.GetTypes()) //type è uguale ai nomi delle classi in MyLibrary
              
                 if (type.IsClass)  //se type è uguale al nome di una classe o di un delegate
